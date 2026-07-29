@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./output.css">
+  <title>Frontend Mentor | Dine Website Challenge</title>
+</head>
+
+<body class="min-h-screen flex-col flex justify-center items-center font-[league-spartan]">
+  <!-- hero -->
+  <section
+    class="bg-[url('./images/booking/hero-bg-mobile.jpg')] w-screen bg-cover h-[600px]  bg-center bg-no-repeat text-white md:bg-[url('./images/booking/hero-bg-tablet.jpg')] xl:md:bg-[url('./images/booking/hero-bg-desktop.jpg')]">
+
+    <div class="mt-[56px] mx-[146.5px] md:mt-[56px] md:mx-[39px] xl:mt-[65px] xl:mx-[167px]">
+      <img src="./images/logo.svg" alt="">
+    </div>
+
+    <!-- text -->
+    <div
+      class="w-[270px] md:w-[573px] xl:w-[445px] gap-[12px] xl:gap-[20px] flex flex-col items-center text-center justify-center mt-[89px] m-auto xl:text-left xl:items-start xl:mx-[167px] xl:mt-[153px]">
+      <p class="text-preset-3-light md:text-preset-2-light font-light xl:text-preset-1">Reservations</p>
+      <p class="text-preset-6-regular md:text-preset-4-regular">We can’t wait to host you. If you have any special
+        requirements please feel free
+        to call on the phone number below. We’ll be happy to accommodate you.</p>
+    </div>
+  </section>
+
+  <!-- form -->
+  <section class="relative xl:h-[320px]">
+    <div class="bg-white w-[327px] md:w-[540px] z-20 relative shadow-[0_75px_100px_-50px_rgba(56,66,85,0.5)] mt-[-137px] md:mt-[-213px] xl:ml-130 xl:-mt-90">
+      <form class="mx-[32px] md:pr-[64px] pt-[37px] mb-[86px] xl:mb-0  md:w-full gap-[32px] flex flex-col" action="">
+        <!-- Name -->
+        <input class="border-b" type="text" id="name" name="name" placeholder="Name">
+
+        <!-- Email -->
+        <input class="border-b" type="email" id="email" name="email" placeholder="Email">
+
+        <!-- Date -->
+        <div class="flex flex-col md:flex-row  gap-[8px]">
+          <p class="md:w-[165px]">Pick a date</p>
+          <div class="grid grid-cols-3 gap-[5px]">
+            <input class="border-b" type="text" placeholder="MM" id="month">
+            <input class="border-b" type="text" placeholder="DD" id="day">
+            <input class="border-b" type="text" placeholder="YYYY" id="year">
+          </div>
+        </div>
+
+        <!-- Time -->
+        <div class="flex flex-col md:flex-row gap-[8px]">
+          <p class="md:w-[165px]">Pick a time</p>
+          <div class="grid grid-cols-3 gap-[5px]">
+            <input class="border-b" type="text" value="09" id="hour" name="hour">
+            <input class="border-b" type="text" value="00" id="minute" name="minute">
+            <input class="border-b" type="text" value="" placeholder="AM" id="minute" name="minute">
+          </div>
+        </div>
+
+        <!-- count -->
+        <div class="border-b items-center flex-row px-4">
+          <div class="flex flex-row gap-[100px] md:gap-52 py-[16px]">
+            <button><img src="./images/icons/icon-minus.svg" alt=""></button>
+            <span>1</span>
+            <button><img src="./images/icons/icon-plus.svg" alt=""></button>
+          </div>
+        </div>
+
+        <!-- button -->
+        <button class="border w-full bg-black text-white mb-[50px] py-[24px] text-preset-5-semibold w-fit">MAKE A
+          RESERVATION</button>
+      </form>
+    </div>
+    <img class="absolute left-[80px] bottom-[38px] -z-10" src="./images/patterns/pattern-lines.svg" alt="">
+    <img class="absolute hidden -left-50 top-0 xl:flex -z-20" src="./images/patterns/pattern-curve-bottom-right.svg" alt="">
+  </section>
+
+  <!-- footer -->
+  <footer class="bg-neutral-900 flex flex-col items-center justify-center w-screen xl:h-[240px] md:h-[328px] h-[440px]">
+    <div
+      class=" flex w-full flex-col text-white text-center justify-center items-center max-w-[375px] max-h-[328px] md:items-start md:max-w-[689px] xl:max-w-[1110px] ">
+      <div class="flex flex-col items-center md:gap-[130px] xl:gap-[193px] gap-[40px] md:flex-row md:items-start">
+        <img class="w-[103.42px] h-[40px]" src="./images/logo.svg" alt="">
+        <div class="gap-[32px] flex md:text-left flex-col text-preset-7-regular xl:flex-row xl:gap-[124px]">
+          <p>Marthwaite, Sedbergh<br>
+            Cumbria<br>
+            +00 44 123 4567</p>
+          <p>OPEN TIMES<br>
+            MON - FRI: 09:00 AM - 10:00 PM<br>
+            SAT - SUN: 09:00 AM - 11:30 PM
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
