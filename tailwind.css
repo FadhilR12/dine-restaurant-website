@@ -78,7 +78,7 @@
 }
 @utility text-preset-8-regular {
   font-family: var(--font-league-spartan);
-  font-size: 160x;
+  font-size: 10x;
   line-height: 1;
   letter-spacing: -0.2px;
 }

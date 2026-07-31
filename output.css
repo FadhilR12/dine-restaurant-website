@@ -562,8 +562,17 @@
   .pt-\[37px\] {
     padding-top: 37px;
   }
+  .pl-\[12px\] {
+    padding-left: 12px;
+  }
+  .pl-\[16px\] {
+    padding-left: 16px;
+  }
   .text-center {
     text-align: center;
+  }
+  .text-left {
+    text-align: left;
   }
   .text-preset-1 {
     font-family: var(--font-league-spartan);
@@ -613,8 +622,17 @@
     line-height: 2;
     letter-spacing: 2px;
   }
+  .text-preset-8-regular {
+    font-family: var(--font-league-spartan);
+    font-size: 10x;
+    line-height: 1;
+    letter-spacing: -0.2px;
+  }
   .font-\[league-spartan\] {
     font-family: league-spartan;
+  }
+  .text-\[10px\] {
+    font-size: 10px;
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
@@ -627,6 +645,9 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .text-\[\#B54949\] {
+    color: #B54949;
   }
   .text-white {
     color: var(--color-white);
@@ -651,18 +672,11 @@
     .hover\:bg-white:hover {
       background-color: var(--color-white);
     }
-    .hover\:font-semibold:hover {
-      --tw-font-weight: var(--font-weight-semibold);
-      font-weight: var(--font-weight-semibold);
-    }
     .hover\:text-neutral-900:hover {
       color: var(--color-neutral-900);
     }
     .hover\:text-slate-900:hover {
       color: var(--color-slate-900);
-    }
-    .hover\:text-white:hover {
-      color: var(--color-white);
     }
   }
   @media (width >= 48rem) {

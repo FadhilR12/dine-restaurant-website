@@ -33,17 +33,35 @@
 
   <!-- form -->
   <section class="relative xl:h-[320px]">
-    <div class="bg-white w-[327px] md:w-[540px] xl:h-[545px] z-20 relative shadow-[0_75px_100px_-50px_rgba(56,66,85,0.5)] mt-[-137px] md:mt-[-213px] xl:ml-130 xl:-mt-90">
-      <form class="mx-[32px] md:pr-[64px] md:pt-[49px] pt-[37px] mb-[86px] xl:mb-0  md:w-full gap-[32px] md:gap-[35px] flex flex-col" action="">
+    <div
+      class="bg-white w-[327px] md:w-[540px] xl:h-[545px] z-20 relative shadow-[0_75px_100px_-50px_rgba(56,66,85,0.5)] mt-[-137px] md:mt-[-213px] xl:ml-130 xl:-mt-90">
+      <form
+        class="mx-[32px] md:pr-[64px] md:pt-[49px] pt-[37px] mb-[86px] xl:mb-0  md:w-full gap-[32px] md:gap-[35px] flex flex-col"
+        action="">
         <!-- Name -->
-        <input class="border-b" type="text" id="name" name="name" placeholder="Name">
+        <div class="gap-[12px] flex flex-col">
+          <input class="border-b w-full" type="text" id="name" name="name" placeholder="Name">
+          <div id="name_error" class=" text-[#B54949] pl-[16px] text-preset-8-regular hidden text-[10px] text-left">
+            <p class="">This field is required</p>
+          </div>
+        </div>
 
         <!-- Email -->
-        <input class="border-b" type="email" id="email" name="email" placeholder="Email">
+         <div class="gap-[12px] flex flex-col">
+           <input class="border-b w-full" type="email" id="email" name="email" placeholder="Email">
+           <div id="email_error" class=" text-[#B54949] pl-[16px] text-preset-8-regular hidden text-[10px] text-left">
+             <p class="">This field is required</p>
+           </div>
+         </div>
 
         <!-- Date -->
-        <div class="flex flex-col md:flex-row  gap-[8px]">
-          <p class="md:w-[165px]">Pick a date</p>
+        <div class="flex flex-col md:flex-row  gap-[5px]">
+          <div>
+            <p class="md:w-[165px]">Pick a date</p>
+            <div id="email_error" class=" text-[#B54949] text-preset-8-regular hidden text-[10px] text-left">
+             <p class="">This field is incomplete</p>
+           </div>
+          </div>
           <div class="grid grid-cols-3 gap-[5px]">
             <input class="border-b" type="text" placeholder="MM" id="month">
             <input class="border-b" type="text" placeholder="DD" id="day">
@@ -53,7 +71,12 @@
 
         <!-- Time -->
         <div class="flex flex-col md:flex-row gap-[8px]">
-          <p class="md:w-[165px]">Pick a time</p>
+          <div>
+            <p class="md:w-[165px]">Pick a time</p>
+            <div id="email_error" class=" text-[#B54949] text-preset-8-regular hidden text-[10px] text-left">
+             <p class="">This field is incomplete</p>
+           </div>
+          </div>
           <div class="grid grid-cols-3 gap-[5px]">
             <input class="border-b" type="text" value="09" id="hour" name="hour">
             <input class="border-b" type="text" value="00" id="minute" name="minute">
@@ -71,12 +94,15 @@
         </div>
 
         <!-- button -->
-        <button class="border w-full bg-black text-white mb-[50px] xl:mt-[10px] py-[24px] hover:bg-white hover:text-neutral-900 text-preset-5-semibold w-fit">MAKE A
+        <button
+          class="border w-full bg-black text-white mb-[50px] xl:mt-[10px] py-[24px] hover:bg-white hover:text-neutral-900 text-preset-5-semibold w-fit">MAKE
+          A
           RESERVATION</button>
       </form>
     </div>
     <img class="absolute hidden xl:flex left-105 bottom-25 -z-10" src="./images/patterns/pattern-lines.svg" alt="">
-    <img class="absolute hidden -left-50 top-0 xl:flex -z-20" src="./images/patterns/pattern-curve-bottom-right.svg" alt="">
+    <img class="absolute hidden -left-50 top-0 xl:flex -z-20" src="./images/patterns/pattern-curve-bottom-right.svg"
+      alt="">
   </section>
 
   <!-- footer -->
