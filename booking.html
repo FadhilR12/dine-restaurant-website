@@ -12,7 +12,7 @@
   <title>Frontend Mentor | Dine Website Challenge</title>
 </head>
 
-<body class="min-h-screen flex-col flex justify-center items-center font-[league-spartan]">
+<body class="min-h-screen flex-col flex justify-center items-center font-(--font-league-spartan)">
   <!-- hero -->
   <section
     class="bg-[url('./images/booking/hero-bg-mobile.jpg')] w-screen bg-cover h-[600px]  bg-center bg-no-repeat text-white md:bg-[url('./images/booking/hero-bg-tablet.jpg')] xl:md:bg-[url('./images/booking/hero-bg-desktop.jpg')]">
@@ -42,25 +42,23 @@
         <div class="gap-[12px] flex flex-col">
           <input class="border-b w-full" type="text" id="name" name="name" placeholder="Name">
           <div id="name_error" class=" text-[#B54949] pl-[16px] text-preset-8-regular hidden text-[10px] text-left">
-            <p class="">This field is required</p>
           </div>
         </div>
 
         <!-- Email -->
-         <div class="gap-[12px] flex flex-col">
-           <input class="border-b w-full" type="email" id="email" name="email" placeholder="Email">
-           <div id="email_error" class=" text-[#B54949] pl-[16px] text-preset-8-regular hidden text-[10px] text-left">
-             <p class="">This field is required</p>
-           </div>
-         </div>
+        <div class="gap-[12px] flex flex-col">
+          <input class="border-b w-full" type="email" id="email" name="email" placeholder="Email">
+          <div id="email_error" class=" text-[#B54949] pl-[16px] text-preset-8-regular hidden text-[10px] text-left">
+            <p class="">This field is required</p>
+          </div>
+        </div>
 
         <!-- Date -->
         <div class="flex flex-col md:flex-row  gap-[5px]">
-          <div>
+          <div id="date" class="gap-0.5 flex flex-col">
             <p class="md:w-[165px]">Pick a date</p>
-            <div id="email_error" class=" text-[#B54949] text-preset-8-regular hidden text-[10px] text-left">
-             <p class="">This field is incomplete</p>
-           </div>
+            <div id="date_error" class=" text-[#B54949] text-preset-8-regular hidden text-[10px] text-left">
+            </div>
           </div>
           <div class="grid grid-cols-3 gap-[5px]">
             <input class="border-b" type="text" placeholder="MM" id="month">
@@ -71,16 +69,15 @@
 
         <!-- Time -->
         <div class="flex flex-col md:flex-row gap-[8px]">
-          <div>
+          <div id="time" class="gap-0.5 flex flex-col">
             <p class="md:w-[165px]">Pick a time</p>
-            <div id="email_error" class=" text-[#B54949] text-preset-8-regular hidden text-[10px] text-left">
-             <p class="">This field is incomplete</p>
-           </div>
+            <div id="time_error" class=" text-[#B54949] text-preset-8-regular hidden text-[10px] text-left">
+            </div>
           </div>
           <div class="grid grid-cols-3 gap-[5px]">
-            <input class="border-b" type="text" value="09" id="hour" name="hour">
-            <input class="border-b" type="text" value="00" id="minute" name="minute">
-            <input class="border-b" type="text" value="" placeholder="AM" id="minute" name="minute">
+            <input class="border-b" type="text" placeholder="09"  id="hour" name="hour">
+            <input class="border-b" type="text" placeholder="00" id="minute" name="minute">
+            <input class="border-b" type="text" value="" placeholder="AM" id="ampm" name="ampm">
           </div>
         </div>
 
@@ -94,7 +91,7 @@
         </div>
 
         <!-- button -->
-        <button
+        <button id="button"
           class="border w-full bg-black text-white mb-[50px] xl:mt-[10px] py-[24px] hover:bg-white hover:text-neutral-900 text-preset-5-semibold w-fit">MAKE
           A
           RESERVATION</button>
@@ -123,6 +120,109 @@
       </div>
     </div>
   </footer>
+  <script>
+    const submitBtn = document.getElementById("button");
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const date = document.getElementById("date");
+    const time = document.getElementById("time");
+    const month = document.getElementById("month");
+    const day = document.getElementById("day");
+    const year = document.getElementById("year");
+    const hour = document.getElementById("hour");
+    const minute = document.getElementById("minute");
+    const ampm = document.getElementById("ampm");
+
+    const name_error = document.getElementById("name_error");
+    const email_error = document.getElementById("email_error");
+    const date_error = document.getElementById("date_error");
+    const time_error = document.getElementById("time_error");
+
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    function submit(event) {
+      event.preventDefault();
+
+      if (name.value == "") {
+        name_error.textContent = "This field is required"
+        name.classList.add("border-b-[#B54949]")
+        name_error.classList.remove("hidden")
+        name.classList.add("placeholder:text-[#B54949]")
+      } else {
+        name.classList.remove("border-b-[#B54949]")
+        name_error.classList.add("hidden")
+        name.classList.remove("placeholder:text-[#B54949]")
+      }
+
+      if (email.value == "") {
+        email.textContent = "This field is required"
+        email.classList.add("border-b-[#B54949]")
+        email.classList.add("placeholder:text-[#B54949]")
+        email_error.classList.remove("hidden")
+      } else if (!isValidEmail(email.value)) {
+        email.textContent = "Looks like this is not an email"
+        email.classList.add("border-b-[#B54949]")
+        email_error.classList.remove("hidden")
+        email.classList.add("placeholder:text-[#B54949]")
+      } else {
+        email.classList.remove("border-b-[#B54949]")
+        email_error.classList.add("hidden")
+        email.classList.remove("placeholder:text-[#B54949]")
+      }
+
+      if (month.value == "" || day.value == "" || year.value == "") {
+        date_error.textContent = "This field is incomplete"
+        date_error.classList.remove("hidden")
+
+        date.classList.add("text-[#B54949]")
+        month.classList.add("border-b-[#B54949]")
+        month.classList.add("placeholder:text-[#B54949]")
+        day.classList.add("border-b-[#B54949]")
+        day.classList.add("placeholder:text-[#B54949]")
+        year.classList.add("border-b-[#B54949]")
+        year.classList.add("placeholder:text-[#B54949]")
+      } else {
+        date_error.classList.add("hidden")
+        
+
+        year.classList.remove("placeholder:text-[#B54949]")
+        month.classList.remove("placeholder:text-[#B54949]")
+        day.classList.remove("placeholder:text-[#B54949]")
+        date.classList.remove("text-[#B54949]")
+        month.classList.remove("border-b-[#B54949]")
+        day.classList.remove("border-b-[#B54949]")
+        year.classList.remove("border-b-[#B54949]")
+      }
+
+      if (hour.value == "" || minute.value == "") {
+        time_error.textContent = "This field is incomplete"
+        time_error.classList.remove("hidden")
+
+        time.classList.add("text-[#B54949]")
+        hour.classList.add("border-b-[#B54949]")
+        hour.classList.add("placeholder:text-[#B54949]")
+        minute.classList.add("border-b-[#B54949]")
+        minute.classList.add("placeholder:text-[#B54949]")
+      } else {
+        time_error.classList.add("hidden")
+        
+        time.classList.remove("text-[#B54949]")
+        hour.classList.remove("border-b-[#B54949]")
+        hour.classList.remove("placeholder:text-[#B54949]")
+        minute.classList.remove("border-b-[#B54949]")
+        minute.classList.remove("placeholder:text-[#B54949]")
+      }
+
+
+
+    }
+
+    submitBtn.addEventListener("click", submit)
+  </script>
+
 </body>
 
 </html>
