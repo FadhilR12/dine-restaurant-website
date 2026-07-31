@@ -234,8 +234,13 @@
           <p class="text-preset-5-semibold">FAMILY GATHERING </p>
           <img class="h-[1px] w-[48px]" src="./images/icons/icon-minus.svg" alt="">
         </div>
-        <p class="text-preset-5-semibold opacity-[0.5]">SPECIAL EVENTS </p>
-        <p class="text-preset-5-semibold opacity-[0.5]">SOCIAL EVENTS </p>
+        <a id="go_to_special_fam">
+          <p class="text-preset-5-semibold opacity-[0.5]">SPECIAL EVENTS </p>
+        </a>
+
+        <a id="go_to_social_fam">
+          <p class="text-preset-5-semibold opacity-[0.5]">SOCIAL EVENTS </p>
+        </a>
       </div>
 
       <!-- Text -->
@@ -261,12 +266,12 @@
             <p class="text-preset-5-semibold">FAMILY GATHERING </p>
             <img class="absolute top-1/2 left-[-120px] h-[1px] w-[95px]" src="./images/icons/icon-minus.svg" alt="">
           </div>
-          <div>
+          <a id="go_to_special_fam_des">
             <p class="text-preset-5-semibold opacity-[0.5]">SPECIAL EVENTS </p>
-          </div>
-          <div>
+          </a>
+          <a id="go_to_social_fam_des">
             <p class="text-preset-5-semibold opacity-[0.5]">SOCIAL EVENTS </p>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -299,12 +304,16 @@
       <!-- Events booking -->
       <div
         class="gap-[24px] md:gap-[50px] flex flex-col md:items-start md:flex-row items-center font-semibold xl:hidden">
-        <p class="text-preset-5-semibold opacity-[0.5]">FAMILY GATHERING </p>
+        <a id="go_to_family_spec">
+          <p class="text-preset-5-semibold opacity-[0.5]">FAMILY GATHERING </p>
+        </a>
         <div class="gap-[10px] flex flex-col items-center md:gap-[20px] md:mt-0">
           <p class="text-preset-5-semibold">SPECIAL EVENTS </p>
           <img class="h-[1px] w-[48px]" src="./images/icons/icon-minus.svg" alt="">
         </div>
-        <p class="text-preset-5-semibold opacity-[0.5]">SOCIAL EVENTS </p>
+        <a id="go_to_social_spec">
+          <p class="text-preset-5-semibold opacity-[0.5]">SOCIAL EVENTS </p>
+        </a>
       </div>
 
       <!-- Text -->
@@ -326,12 +335,16 @@
         </div>
 
         <div class="hidden xl:flex flex-col gap-[24px]">
-          <p class="text-preset-5-semibold opacity-[0.5]">FAMILY GATHERING </p>
+          <a id="go_to_family_spec_des">
+            <p class="text-preset-5-semibold opacity-[0.5]">FAMILY GATHERING </p>
+          </a>
           <div class="relative">
             <p class="text-preset-5-semibold ">SPECIAL EVENTS </p>
             <img class="absolute top-1/2 left-[-120px] h-[1px] w-[95px]" src="./images/icons/icon-minus.svg" alt="">
           </div>
-          <p class="text-preset-5-semibold opacity-[0.5]">SOCIAL EVENTS </p>
+          <a id="go_to_social_spec_des">
+            <p class="text-preset-5-semibold opacity-[0.5]">SOCIAL EVENTS </p>
+          </a>
         </div>
       </div>
 
@@ -364,8 +377,12 @@
       <!-- Events booking -->
       <div
         class="gap-[24px] md:gap-[50px] flex flex-col md:items-start md:flex-row items-center font-semibold xl:hidden">
-        <p class="text-preset-5-semibold opacity-[0.5]">FAMILY GATHERING </p>
-        <p class="text-preset-5-semibold opacity-[0.5]">SPECIAL EVENTS </p>
+        <a id="go_to_family_soc">
+          <p class="text-preset-5-semibold opacity-[0.5]">FAMILY GATHERING </p>
+        </a>
+        <a id="go_to_special_soc">
+          <p class="text-preset-5-semibold opacity-[0.5]">SPECIAL EVENTS </p>
+        </a>
         <div class="gap-[10px] flex flex-col items-center md:gap-[20px] md:mt-0">
           <p class="text-preset-5-semibold ">SOCIAL EVENTS </p>
           <img class="h-[1px] w-[48px]" src="./images/icons/icon-minus.svg" alt="">
@@ -391,8 +408,12 @@
         </div>
 
         <div class="hidden xl:flex flex-col gap-[24px]">
-          <p class="text-preset-5-semibold opacity-[0.5]">FAMILY GATHERING </p>
-          <p class="text-preset-5-semibold opacity-[0.5]">SPECIAL EVENTS </p>
+          <a id="go_to_family_soc_des">
+            <p class="text-preset-5-semibold opacity-[0.5]">FAMILY GATHERING </p>
+          </a>
+          <a id="go_to_special_soc_des">
+            <p class="text-preset-5-semibold opacity-[0.5]">SPECIAL EVENTS </p>
+          </a>
           <div class="relative">
             <p class="text-preset-5-semibold">SOCIAL EVENTS </p>
             <img class="absolute top-1/2 left-[-120px] h-[1px] w-[95px]" src="./images/icons/icon-minus.svg" alt="">
@@ -434,6 +455,67 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const go_soc_fam = document.getElementById("go_to_social_fam");
+    const go_soc_fam_des = document.getElementById("go_to_social_fam_des");
+    const go_spec_fam = document.getElementById("go_to_special_fam");
+    const go_spec_fam_des = document.getElementById("go_to_special_fam_des");
+
+    const go_fam_spec = document.getElementById("go_to_family_spec");
+    const go_fam_spec_des = document.getElementById("go_to_family_spec_des");
+    const go_soc_spec = document.getElementById("go_to_social_spec");
+    const go_soc_spec_des = document.getElementById("go_to_social_spec_des");
+
+    const go_fam_soc = document.getElementById("go_to_family_soc");
+    const go_fam_soc_des = document.getElementById("go_to_family_soc_des");
+    const go_spec_soc = document.getElementById("go_to_special_soc");
+    const go_spec_soc_des = document.getElementById("go_to_special_soc_des");
+
+
+
+    const family = document.getElementById("family_gathering");
+    const special = document.getElementById("special_events");
+    const social = document.getElementById("social_events");
+
+
+
+
+    function gotosoc(event) {
+      event.preventDefault();
+      family.classList.add("hidden")
+      special.classList.add("hidden")
+      social.classList.remove("hidden")
+    }
+    function gotospec(event) {
+      event.preventDefault();
+      family.classList.add("hidden")
+      special.classList.remove("hidden")
+      social.classList.add("hidden")
+    }
+    function gotofam(event) {
+      event.preventDefault();
+      family.classList.remove("hidden")
+      special.classList.add("hidden")
+      social.classList.add("hidden")
+    }
+    
+    go_soc_fam.addEventListener("click", gotosoc)
+    go_soc_fam_des.addEventListener("click", gotosoc)
+    go_spec_fam.addEventListener("click", gotospec)
+    go_spec_fam_des.addEventListener("click", gotospec)
+
+    go_fam_spec.addEventListener("click", gotofam)
+    go_fam_spec_des.addEventListener("click", gotofam)
+    go_soc_spec.addEventListener("click", gotosoc)
+    go_soc_spec_des.addEventListener("click", gotosoc)
+
+    go_fam_soc.addEventListener("click", gotofam)
+    go_fam_soc_des.addEventListener("click", gotofam)
+    go_spec_soc.addEventListener("click", gotospec)
+    go_spec_soc_des.addEventListener("click", gotospec)
+
+  </script>
 </body>
 
 </html>
